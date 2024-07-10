@@ -4,6 +4,7 @@ import axios from 'axios'
 import { toast } from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
 import { Button } from "@/components/ui/button"
+import Link from 'next/link'
 
 
 function SignUpPage() {
@@ -46,13 +47,15 @@ function SignUpPage() {
     <div className='flex flex-col items-center justify-center min-h-screen py-2'>
       <h1>{loading ? "Processing..." : "Signup"}</h1>
       <hr />
-      <label htmlFor="userName">username</label>
+      <label htmlFor="userName">Your name</label>
       <input id='userName' className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black' value={user.userName} onChange={(e)=> setUser({...user , userName : e.target.value})} placeholder='username' type="text" />
       <label htmlFor="email">email</label>
       <input id='email' className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black' value={user.email} onChange={(e)=> setUser({...user , email : e.target.value})} placeholder='email' type="email" />
       <label htmlFor="password">password</label>
       <input id='password' className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black' value={user.password} onChange={(e)=> setUser({...user , password : e.target.value})} placeholder='password' type="password" />
-      <Button variant="secondary" onClick={onSignup}>{buttondisabled ? "Please fill the form" : "signup"}</Button>
+      <Button variant="secondary"  onClick={onSignup}>{buttondisabled ? "Please fill the form" : "signup"}</Button>
+      <Link href="/login">Visit Login Page</Link>
+
     </div>
   )
 }

@@ -10,6 +10,8 @@ export async function POST( request : NextRequest){
     try {
         const reqBody = await request.json()
         const {userName, email, password} = reqBody;
+        // const {userName, email, password} = request.json();  //This gives error
+
         // Validation
         console.log(reqBody);
         
