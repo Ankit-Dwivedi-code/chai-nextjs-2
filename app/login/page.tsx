@@ -52,7 +52,7 @@ function LoginPage() {
       <label htmlFor="password">password</label>
       <input id='password' className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black' value={user.password} onChange={(e)=> setUser({...user , password : e.target.value})} placeholder='password' type="password" />
       <Button variant="secondary" disabled={buttondisabled} onClick={onLogin}>{buttondisabled ? "Please fill the form" : "Login"}</Button>
-      <Link href="/signup">Visit Signup Page</Link>
+      <Link className='text-blue-700 mt-3' href="/signup">Visit Signup Page</Link>
 
     </div>
   )
